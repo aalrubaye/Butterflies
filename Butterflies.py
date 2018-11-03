@@ -13,7 +13,7 @@ bipartite = None
 number_of_betterflies = 6
 
 # number_of_species = random.randint(2,5)
-number_of_species = 4
+number_of_species = 2
 
 
 # return a random number indicating different specimens
@@ -28,7 +28,7 @@ def generate_random_specimens():
 def generate_random_species(specimens_count):
     specimens_type = []
     for i in range (0, specimens_count):
-        specimens_type.append(random.randint(0, number_of_species-1))
+        specimens_type.append('Species-Type-'+str(random.randint(0, number_of_species-1)))
     return specimens_type
 
 
@@ -40,20 +40,21 @@ def generate_random_species(specimens_count):
 def generate_network_of_butterflies_judgement(butterflies, butterflies_types):
     global graph, nodes, visited
     for i in range (0, len(butterflies)):
-        graph.add_node('B-'+str(i), color='none', visited=False)
-        nodes.append('B-'+str(i))
+        graph.add_node('Butterfly-'+str(i), color='none', visited=False)
+        nodes.append('Butterfly-'+str(i))
+    print 'Specimens of Butterflies = '+ str(nodes)
 
     for i in range (0, len(butterflies)):
         for j in range (i+1, len(butterflies)):
             if butterflies_types[butterflies[i]] == butterflies_types[butterflies[j]]:
-                new_node_label = 'S-'+str(i)+'-'+str(j)
+                new_node_label = 'Same-Type-B'+str(i)+'-B'+str(j)
                 nodes.append(new_node_label)
                 graph.add_node(new_node_label, color='none', visited=False)
-                graph.add_edge('B-'+str(i), new_node_label)
-                graph.add_edge('B-'+str(j), new_node_label)
+                graph.add_edge('Butterfly-'+str(i), new_node_label)
+                graph.add_edge('Butterfly-'+str(j), new_node_label)
 
             else:
-                graph.add_edge('B-'+str(i), 'B-'+str(j))
+                graph.add_edge('Butterfly-'+str(i), 'Butterfly-'+str(j))
 
 
 
@@ -111,18 +112,19 @@ if __name__ == "__main__":
 
     generate_network_of_butterflies_judgement(butterflies, butterflies_types)
 
-
-    print butterflies
-    print butterflies_types
-    print graph.nodes()
-    print graph.edges()
+    print 'Species Type for each butterfly = '+str(butterflies_types)
+    print ('-'*300)
+    print 'The set of Nodes (V) ='+ str(graph.nodes())
+    print 'The set of Edges (E) ='+ str(graph.edges())
+    print ('-'*300)
 
     validate_partiteness()
-
-
+    print
+    print
+    print ('-'*300)
     if bipartite:
-        print "bipartite"
+        print "Result => The judgment was consistent (The network is Bipartite)"
     else:
-        print "not bipartite"
-
+        print "Result => The judgment was not consistent (The network is Not Bipartite)"
+    print ('-'*300)
     nx.write_graphml(graph, "butterfliesGraph.graphml")
