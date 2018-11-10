@@ -1,6 +1,7 @@
 __author__ = 'Abdul Rubaye'
 import networkx as nx
 import random
+import sys
 
 graph = nx.Graph()
 nodes = []
@@ -10,10 +11,9 @@ L = []
 bipartite = None
 
 # number_of_betterflies = random.randint(3,10)
-number_of_betterflies = 6
-
+number_of_betterflies = 1000
 # number_of_species = random.randint(2,5)
-number_of_species = 2
+number_of_species = 4
 
 
 # return a random number indicating different specimens
@@ -107,6 +107,9 @@ def check_neighbors(current_node):
 
 # The main function
 if __name__ == "__main__":
+
+    sys.setrecursionlimit(1000000)
+
     butterflies = generate_random_specimens()
     butterflies_types = generate_random_species(len(butterflies))
 
@@ -118,7 +121,7 @@ if __name__ == "__main__":
     print 'The set of Edges (E) ='+ str(graph.edges())
     print ('-'*300)
 
-    validate_partiteness()
+    # validate_partiteness()
     print
     print
     print ('-'*300)
