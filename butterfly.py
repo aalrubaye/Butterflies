@@ -1,11 +1,9 @@
-import tqdm as tqdm
-
 __author__ = 'Abdul Rubaye'
 import networkx as nx
 import random
 import datetime
 import matplotlib.pyplot as plt
-import numpy as np
+import tqdm as tqdm
 
 graph = nx.Graph()
 nodes = []
