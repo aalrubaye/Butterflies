@@ -4,6 +4,7 @@
 - NetworkX
 - matplotlib
 - tqdm (a smart progress meter)
+- numpy
 
 ## Installations required:
 ### NetworkX:
@@ -24,7 +25,10 @@ For more information please visit https://matplotlib.org/users/installing.html
     sudo pip install tqdm
 ``` 
 For more information please visit https://github.com/tqdm/tqdm/#installation
-    
+
+### numpy:
+Most of the recent python versions obtain numpy library. For more information please visit https://www.scipy.org/scipylib/download.html
+  
 ## Running the code:
 To run the code you can do either one:
 - via terminal/shell by getting into the directory of the code then 
