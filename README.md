@@ -8,22 +8,22 @@
 ## Installations required:
 ### NetworkX:
 ```
-  pip install networkx
+  sudo pip install networkx
 ```
 For more information please visit https://networkx.github.io/documentation/stable/install.html
 
 ### matplotlib:
  ```
-    python -m pip install -U pip
-    python -m pip install -U matplotlib
+    sudo python -m pip install -U pip
+    sudo python -m pip install -U matplotlib
 ``` 
 For more information please visit https://matplotlib.org/users/installing.html
     
 ### tqdm
 ```
-    pip install https://github.com/tqdm/tqdm/#installation
+    sudo pip install tqdm
 ``` 
-For more information please visit https://github.com/jeffalstott/powerlaw
+For more information please visit https://github.com/tqdm/tqdm/#installation
     
 ## Running the code:
 To run the code you can do either one:
