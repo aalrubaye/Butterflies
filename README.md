@@ -35,7 +35,7 @@ To run the code you can do either one:
 ```
     python butterfly.py
 ```
-watch it here (https://www.youtube.com/watch?v=PdDxDyJ1jAs)
+watch it here (https://www.youtube.com/watch?v=UR5u4mxJQpQ&feature=youtu.be)
 
 
 The first 10 test cases and thier correct answer (via BruteForce algorithm) are stored at the file "Test_cases_and_correct_answers.txt"
